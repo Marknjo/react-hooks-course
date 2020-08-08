@@ -12,7 +12,6 @@ const styles = {
 	},
 };
 
-<<<<<<< HEAD
 const Loading = ({ text = "loading", speed = 300 }) => {
 	const [content, setContent] = useState(text);
 
@@ -35,31 +34,3 @@ Loading.propTypes = {
 };
 
 export default Loading;
-=======
-export default function Loading ({ text = 'Loading', speed = 300 }) {
-  const [content, setContent] = React.useState(text)
-
-  React.useEffect(() => {
-    const id = window.setInterval(() => {
-      setContent((content) => {
-        return content === `${text}...`
-          ? text
-          : `${content}.`
-      })
-    }, speed)
-
-    return () => window.clearInterval(id)
-  }, [text, speed])
-
-  return (
-    <p style={styles.content}>
-      {content}
-    </p>
-  )
-}
-
-Loading.propTypes = {
-  text: PropTypes.string,
-  speed: PropTypes.number,
-}
->>>>>>> d2a040c146117aca746f7932d40092de7e3da0de
