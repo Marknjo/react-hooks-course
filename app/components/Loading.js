@@ -18,11 +18,11 @@ const Loading = ({ text = "loading", speed = 300 }) => {
 	useEffect(() => {
 		const interval = window.setInterval(() => {
 			setContent((content) =>
-				content === `${text}...` ? content : `${content}.`
+				content === `${text}...` ? text : `${content}.`
 			);
 		}, speed);
 
-		return window.clearInterval(interval);
+		return () => window.clearInterval(interval);
 	}, [text, speed]);
 
 	return <p style={styles.content}>{content}</p>;
