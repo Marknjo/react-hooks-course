@@ -25,7 +25,7 @@ class App extends React.Component {
 				<ThemeProvider value={this.state}>
 					<div className={this.state.theme}>
 						<div className="container">
-							<Nav toggleTheme={this.state.toggleTheme} />
+							<Nav />
 
 							<React.Suspense fallback={<Loading />}>
 								<Switch>
